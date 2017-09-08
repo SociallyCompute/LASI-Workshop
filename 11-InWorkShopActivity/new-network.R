@@ -26,13 +26,19 @@ networkPosts <- read.csv("mdl_forum_posts_scrubbed_snadata.csv")
 ## Create a smaller sample of one user's connections 
 test <- subset(networkPosts, userid_to == 178920)
 
+myVertices <- as.data.frame(cbind(unique(test$userid_from)), unique(test$userid_to))
+
+
 ## Create an iGraph dataframe frome the regular dataframe
-myGraph <- 	graph.data.frame(test, directed=TRUE)
+myGraph <- 	graph.data.frame(test, directed=TRUE, vertices=myVertices)
 
 ## Set the labels. 
 ## This does not work, need to create a factor so 
 ## Numbers show up as strings
-V(myGraph)$label <- V(myGraph)$userid_to
+# V(myGraph)$label <- V(myGraph)$userid_to
+
+
+E(myGraph)[[]]
 
 ## Plot the iGraph
 plot.igraph(myGraph, vertex.label.dist=.6, vertex.label.cex=1, vertex.label.color="blue", 
