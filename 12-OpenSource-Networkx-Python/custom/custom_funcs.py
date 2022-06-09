@@ -114,9 +114,9 @@ def load_crime_network():
     edgecount = G.number_of_edges()
     listnodes = list(G.nodes)
     listedges = list(G.edges)
-    print(f'Number of nodes is: {nodecount}\n Number of edges is: {edgecount}')
-    print(f'Nodes: {listnodes}\n\n\n\n\n\n\n\n\n\n\n\n')
-    print(f'Edges: {listedges}\n\n\n\n\n\n\n\n\n\n\n\n')
+    #print(f'Number of nodes is: {nodecount}\n Number of edges is: {edgecount}')
+    #print(f'Nodes: {listnodes}\n\n\n\n\n\n\n\n\n\n\n\n')
+    #print(f'Edges: {listedges}\n\n\n\n\n\n\n\n\n\n\n\n')
     nodedata = G.nodes.data()
     print(f'\n\n\n\n\n\n\n\n\n\n\n\nNode Data: {nodedata}\n\n\n\n\n\n\n\n\n\n\n\n')
 
@@ -126,6 +126,6 @@ def load_crime_network():
     gender.index += 1
     for n, gender_code in gender.iterrows():
         nodeid = 'p{0}'.format(n)
-        G.node[nodeid]['gender'] = gender_code[0]
+        G.nodes[nodeid]['gender'] = gender_code[0]
 
     return G
