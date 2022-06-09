@@ -110,6 +110,16 @@ def load_crime_network():
         G.add_node(cid, bipartite='crime')
         G.add_edge(pid, cid, role=d['roles'])
 
+    nodecount = G.number_of_nodes()
+    edgecount = G.number_of_edges()
+    listnodes = list(G.nodes)
+    listedges = list(G.edges)
+    print(f'Number of nodes is: {nodecount}\n Number of edges is: {edgecount}')
+    print(f'Nodes: {listnodes}\n\n\n\n\n\n\n\n\n\n\n\n')
+    print(f'Edges: {listedges}\n\n\n\n\n\n\n\n\n\n\n\n')
+    nodedata = G.nodes.data()
+    print(f'\n\n\n\n\n\n\n\n\n\n\n\nNode Data: {nodedata}\n\n\n\n\n\n\n\n\n\n\n\n')
+
     # Read in the gender metadata
     gender = pd.read_csv(
         'datasets/moreno_crime/ent.moreno_crime_crime.person.sex', header=None)
