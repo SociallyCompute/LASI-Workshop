@@ -118,7 +118,7 @@ def load_crime_network():
     #print(f'Nodes: {listnodes}\n\n\n\n\n\n\n\n\n\n\n\n')
     #print(f'Edges: {listedges}\n\n\n\n\n\n\n\n\n\n\n\n')
     nodedata = G.nodes.data()
-    print(f'\n\n\n\n\n\n\n\n\n\n\n\nNode Data: {nodedata}\n\n\n\n\n\n\n\n\n\n\n\n')
+    #print(f'\n\n\n\n\n\n\n\n\n\n\n\nNode Data: {nodedata}\n\n\n\n\n\n\n\n\n\n\n\n')
 
     # Read in the gender metadata
     gender = pd.read_csv(
