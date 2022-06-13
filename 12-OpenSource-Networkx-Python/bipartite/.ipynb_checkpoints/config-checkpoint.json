@@ -1,7 +1,7 @@
 {
     "connection_string": "sqlite:///:memory:",
     "database": "augur_science",
-    "host": "192.168.0.95",
+    "host": "chaoss.tv",
     "password": "mcguire18",
     "port": 5432,
     "schema": "augur_data",
